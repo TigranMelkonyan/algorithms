@@ -20,12 +20,12 @@ public class FindTallestCandle {
         int max = candles.getFirst();
 
         for (int i : candles) {
+            if (i == max) {
+                count++;
+            }
             if (i > max) {
                 max = i;
                 count = 1;
-            }
-            if (i == max) {
-                count += 1;
             }
         }
         return count;
