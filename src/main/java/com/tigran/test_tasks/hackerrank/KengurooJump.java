@@ -114,6 +114,7 @@ n = (x1 - x2) / (v2 - v1)
 n = (0 - 5) / (3 - 2)
 n = (-5) / (1)
 n = -5
+
 In this case, n = -5, which is negative. This doesn't make sense because the number of jumps can't be negative. 
 In other words, the kangaroos will never meet at the same time if the value of n is negative.
 
