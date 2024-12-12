@@ -72,18 +72,13 @@ v1 and v2 are the distances each kangaroo moves per jump (their velocities).
 n is the number of jumps.
 We need to find out if there is some number of jumps n such that both kangaroos end up at the same position at the same time. That is, we want to know if there exists an n where:
 
-Copy code
 x1 + n * v1 = x2 + n * v2
 Step 2: Rearranging the equation
 If we subtract x2 + n * v2 from both sides, we get:
 
-scss
-Copy code
 x1 - x2 = n * (v2 - v1)
 Now, we have a simpler equation:
 
-scss
-Copy code
 n = (x1 - x2) / (v2 - v1)
 This tells us that for the kangaroos to meet after some number of jumps n, the difference in their starting positions (x1 - x2) must be divisible by the difference in their velocities (v2 - v1).
 
@@ -98,12 +93,11 @@ Let’s take an example to illustrate:
 x1 = 0, v1 = 3, x2 = 4, v2 = 2
 We substitute into the formula:
 
-scss
-Copy code
 n = (x1 - x2) / (v2 - v1)
 n = (0 - 4) / (2 - 3)
 n = (-4) / (-1)
 n = 4
+
 So, n = 4 is a valid number of jumps. This means after 4 jumps, both kangaroos will meet at the same position. In fact:
 
 Kangaroo 1 will reach position 0 + 4 * 3 = 12.
@@ -116,8 +110,6 @@ Let’s look at a different example:
 x1 = 0, v1 = 2, x2 = 5, v2 = 3
 Substitute into the formula:
 
-scss
-Copy code
 n = (x1 - x2) / (v2 - v1)
 n = (0 - 5) / (3 - 2)
 n = (-5) / (1)
