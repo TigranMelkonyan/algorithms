@@ -8,6 +8,14 @@ import java.util.List;
  * Time: 2:41 PM
  */
 public class BetweenTwoSets {
+
+    public static void main(String[] args) {
+        List<Integer> a = List.of(2, 4);
+        List<Integer> b = List.of(16, 32, 96);
+
+        System.out.println(getTotalX(a, b));
+    }
+
     public static int getTotalX(List<Integer> a, List<Integer> b) {
         int lcmOfA = findLCM(a);
 
@@ -54,12 +62,5 @@ public class BetweenTwoSets {
             gcd = gcd(gcd, numbers.get(i));
         }
         return gcd;
-    }
-
-    public static void main(String[] args) {
-        List<Integer> a = List.of(2, 4);
-        List<Integer> b = List.of(16, 32, 96);
-
-        System.out.println(getTotalX(a, b)); // Output: 3
     }
 }
