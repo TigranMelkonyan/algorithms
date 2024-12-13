@@ -21,19 +21,13 @@ public class SubArrayDivision {
         int count = 0;
         int sum = 0;
 
-        if (n < m) {
-            return 0;
-        }
-        for (int i = 0; i < m; i++) {
-            sum += s.get(i);
-        }
-        if (sum == d) {
-            count++;
-        }
-        for (int i = m; i < n; i++) {
-            sum = sum - s.get(i - m) + s.get(i);
-            if (sum == d) {
-                count++;
+        for (int i = 0; i < n; i++) {
+            sum += s.get(i); // Add the current element to the sum
+            if (i >= m - 1) { // When we have a complete window
+                if (sum == d) {
+                    count++;
+                }
+                sum -= s.get(i - m + 1); // Slide the window by removing the first element
             }
         }
         return count;
