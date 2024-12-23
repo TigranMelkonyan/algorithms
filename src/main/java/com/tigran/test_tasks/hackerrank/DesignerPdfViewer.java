@@ -8,7 +8,7 @@ import java.util.List;
  * Date: 12/23/24
  * Time: 12:11 PM
  */
-public class DesignerPdvViewer {
+public class DesignerPdfViewer {
     public static void main(String[] args) {
         System.out.println(designerPdfViewer(Arrays.asList(1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5), "abc"));
     }
