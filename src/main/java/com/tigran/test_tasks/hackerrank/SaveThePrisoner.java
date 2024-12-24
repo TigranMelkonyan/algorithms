@@ -12,8 +12,8 @@ public class SaveThePrisoner {
         System.out.println(saveThePrisoner(7, 19, 2));
     }
 
-    public static int saveThePrisoner(int n, int c, int pos) {
-        return ((pos - 1 + c - 1) % n) + 1;
+    public static int saveThePrisoner(int n, int candy, int pos) {
+        return ((pos + candy - 2) % n) + 1;
     }
 
 }
