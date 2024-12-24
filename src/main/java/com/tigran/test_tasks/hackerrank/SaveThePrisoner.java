@@ -13,7 +13,7 @@ public class SaveThePrisoner {
     }
 
     public static int saveThePrisoner(int n, int candy, int pos) {
-        return ((pos + candy - 2) % n) + 1;
+        return ((pos - 1 + candy - 1) % n) + 1;
     }
 
 }
