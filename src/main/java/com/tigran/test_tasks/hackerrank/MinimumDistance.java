@@ -31,24 +31,7 @@ public class MinimumDistance {
 
         return minDistance != Integer.MAX_VALUE ? minDistance : -1;
     }
-
-
-    // My version O(n^2) in worst case
-//    public static int minimumDistances(List<Integer> a) {
-//        int minDistance = Integer.MAX_VALUE;
-//        int left = 0;
-//        int right = a.size() - 1;
-//
-//        while (left < right) {
-//            if (a.get(left) == a.get(right)) {
-//                int temp = Math.abs(left - right);
-//                minDistance = Math.min(temp, minDistance);
-//            }
-//            left++;
-//            right--;
-//        }
-//        return minDistance != Integer.MAX_VALUE ? minDistance : -1;
-//    }
+    
 
     // My version O(n^2)
 //    public static int minimumDistances(List<Integer> a) {
