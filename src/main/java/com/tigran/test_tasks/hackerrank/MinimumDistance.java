@@ -33,7 +33,7 @@ public class MinimumDistance {
     }
 
 
-    // My version O(n^2)
+    // My version O(n^2) in worst case
 //    public static int minimumDistances(List<Integer> a) {
 //        int minDistance = Integer.MAX_VALUE;
 //        int left = 0;
