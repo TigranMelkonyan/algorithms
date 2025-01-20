@@ -11,12 +11,12 @@ import java.util.List;
 public class GetAllPossiblePermutations {
 
     public static void main(String[] args) {
-        List<Integer> list2 = new ArrayList<>();
-        list2.add(1);
-        list2.add(2);
-        list2.add(3);
+        List<String> list2 = new ArrayList<>();
+        list2.add("A");
+        list2.add("B");
+        list2.add("C");
 
-        List<List<Integer>> permutations2 = generatePermutations(list2);
+        List<List<String>> permutations2 = generatePermutations(list2);
         System.out.println(permutations2);
     }
 
@@ -32,7 +32,7 @@ public class GetAllPossiblePermutations {
         // Recursive case: generate permutations for the rest of the list
         for (int i = 0; i < inputList.size(); i++) {
             T currentElement = inputList.get(i);
-            // Create a new list without the current element
+            
             List<T> remainingList = new ArrayList<>(inputList);
             remainingList.remove(i);
 
@@ -48,4 +48,40 @@ public class GetAllPossiblePermutations {
 
         return result;
     }
+
+    public static <T> List<List<T>> generatePermutations2(List<T> inputList) {
+        List<List<T>> result = new ArrayList<>();
+
+        // Convert the input list to an array for easier index manipulation
+        List<T> items = new ArrayList<>(inputList);
+        int n = items.size();
+        int[] indices = new int[n]; // Tracks swapping indices
+        result.add(new ArrayList<>(items)); // Add the initial permutation
+
+        int i = 0;
+        while (i < n) {
+            if (indices[i] < i) {
+                // Determine the swap index
+                int swapIndex = (i % 2 == 0) ? 0 : indices[i];
+
+                // Swap elements
+                T temp = items.get(i);
+                items.set(i, items.get(swapIndex));
+                items.set(swapIndex, temp);
+
+                // Add the new permutation to the result
+                result.add(new ArrayList<>(items));
+
+                // Increment the index for i
+                indices[i]++;
+                i = 0; // Reset to check all permutations again
+            } else {
+                indices[i] = 0; // Reset index at position i
+                i++;
+            }
+        }
+
+        return result;
+    }
+
 }
