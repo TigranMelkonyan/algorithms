@@ -1,7 +1,6 @@
 package com.tigran.test_tasks.hackerrank;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,54 +10,23 @@ import java.util.List;
  */
 public class LarrysArray {
     public static void main(String[] args) {
-        System.out.println(larrysArray(new ArrayList<>(List.of(1, 2, 3, 5, 4))));
+        System.out.println(larrysArray(new ArrayList<>(List.of(1, 2, 6, 5, 4, 3))));
+        System.out.println(larrysArray(new ArrayList<>(List.of(3, 1, 2))));
     }
 
-
-    //Rotate consequence elements (3 el) and put in array back 
     public static String larrysArray(List<Integer> A) {
+        int inversions = 0;
 
-        for (int i = 0; i <= A.size() - 3; i++) {
-            List<Integer> subArray = new ArrayList<>();
-            int startIndex = i;
-
-            for (int j = 0; j < 3; j++) {
-                subArray.add(j, A.get(i + j));
+        // Count the number of inversions in the array
+        for (int i = 0; i < A.size(); i++) {
+            for (int j = i + 1; j < A.size(); j++) {
+                if (A.get(i) > A.get(j)) {
+                    inversions++;
+                }
             }
-            checkPermutations(subArray, 0, A, startIndex);
-
         }
 
-        return "NO";
+        // If the number of inversions is even, the array can be sorted with 3-element rotations
+        return (inversions % 2 == 0) ? "YES" : "NO";
     }
-
-    private static void checkPermutations(List<Integer> subArray, int start, List<Integer> arr, int startIndex) {
-        // Base case: if start index reaches the end of the list, add the permutation
-        if (start == subArray.size()) {
-
-            List<Integer> newSubArray = new ArrayList<>(subArray);
-            for (int i = startIndex + 3; i < arr.size(); i++) {
-                newSubArray.add(arr.get(i));
-            }
-
-            if (checkIsSorted(newSubArray)) {
-                System.out.println("YES");
-            }
-
-            return;
-        }
-
-        for (int i = start; i < subArray.size(); i++) {
-            Collections.swap(subArray, start, i); // Swap the current element with the start element
-            checkPermutations(subArray, start + 1, arr, startIndex); // Recursively generate permutations
-            Collections.swap(subArray, start, i); // Backtrack by undoing the swap
-        }
-    }
-
-    private static boolean checkIsSorted(List<Integer> arr) {
-        List<Integer> a = new ArrayList<>(arr);
-        Collections.sort(arr);
-        return arr.equals(a);
-    }
-
 }
