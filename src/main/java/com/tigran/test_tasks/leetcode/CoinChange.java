@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class CoinChange {
     public static void main(String[] args) {
-        System.out.println(coinChange(new int[]{1, 8, 2}, 11));
+        System.out.println(coinChange(new int[]{3, 1}, 6));
         System.out.println(coinChange(new int[]{1, 2, 5, 9}, 11));
     }
 
