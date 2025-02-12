@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tigran</groupId>
-	<artifactId>test-tasks</artifactId>
+	<artifactId>algorithms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test-tasks</name>
+	<name>algorithms</name>
 	<description>Demo test tasks</description>
 	<url/>
 	<licenses>
