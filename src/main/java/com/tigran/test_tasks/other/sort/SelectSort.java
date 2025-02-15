@@ -14,7 +14,7 @@ public class SelectSort {
         Arrays.stream(arr).forEach(System.out::print);
     }
 
-    public static int[] sort(int[] arr) {
+    public static void sort(int[] arr) {
         int n = arr.length;
 
         for (int i = 0; i < arr.length - 1; i++) {
@@ -29,7 +29,5 @@ public class SelectSort {
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
         }
-
-        return arr;
     }
 }
