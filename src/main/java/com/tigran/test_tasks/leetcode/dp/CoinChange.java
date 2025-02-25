@@ -1,4 +1,4 @@
-package com.tigran.test_tasks.leetcode;
+package com.tigran.test_tasks.leetcode.dp;
 
 import java.util.Arrays;
 

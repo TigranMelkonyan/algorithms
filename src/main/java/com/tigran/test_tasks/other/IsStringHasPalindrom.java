@@ -7,6 +7,8 @@ package com.tigran.test_tasks.other;
  */
 public class IsStringHasPalindrom {
     public static void main(String[] args) {
+        System.out.println(hasPalindromic("a"));
+        System.out.println(hasPalindromic("bb"));
         System.out.println(hasPalindromic("aba"));
         System.out.println(hasPalindromic("aab"));
         System.out.println(hasPalindromic("abc"));
@@ -15,6 +17,7 @@ public class IsStringHasPalindrom {
 
     public static boolean hasPalindromic(String s) {
         if (s == null || s.isEmpty()) return false;
+        if (s.length() == 1) return true;
 
         for (int i = 0; i < s.length(); i++) {
             if (expandAroundCentre(i, i, s) || expandAroundCentre(i, i + 1, s)) {
