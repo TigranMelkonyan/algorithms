@@ -15,7 +15,6 @@ public class GroupAnagrams {
     public static void main(String[] args) {
         String[] words = {"eat", "tea", "tan", "ate", "nat", "bat"};
 
-        System.out.println("542".charAt(0) - '0' == 5);
         System.out.println(groupAnagrams(words));
     }
 
