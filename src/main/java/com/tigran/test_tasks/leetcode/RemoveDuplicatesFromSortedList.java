@@ -1,4 +1,4 @@
-package com.tigran.test_tasks.leetcode.dp;
+package com.tigran.test_tasks.leetcode;
 
 /**
  * Created by Tigran Melkonyan
@@ -30,12 +30,12 @@ public class RemoveDuplicatesFromSortedList {
                 continue;
             } else {
                 current.next = head;
-                head = head.next;
             }
+            head = head.next;
             current = current.next;
         }
-        
-        if(head != null) {
+
+        if (head != null) {
             current.next = head;
         }
 
