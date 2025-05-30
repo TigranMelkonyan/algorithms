@@ -27,7 +27,7 @@ import java.util.Set;
 public class DirectoryStructureValidator {
     public static void main(String[] args) {
         List<String> input = List.of(
-                "root/f",
+                "root/",
                 "root/a/",
                 "root/a/b.txt");
         System.out.println(isValidStructure(input));
