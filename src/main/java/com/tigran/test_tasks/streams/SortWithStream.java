@@ -12,8 +12,8 @@ public class SortWithStream {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Charlie", "Alice", "Bob");
 
-        names.stream().sorted().toList();
+        List<String> listSorted = names.stream().sorted().toList();
 
-        System.out.println(names);
+        System.out.println(listSorted);
     }
 }
