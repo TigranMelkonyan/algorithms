@@ -1,9 +1,9 @@
 package com.tigran.test_tasks.leetcode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Tigran Melkonyan
@@ -27,15 +27,15 @@ public class LengthOfLongestSubstring {
         return max;
     }
 
-    static int foo(int index, String s) {
-        List<Character> arr = new ArrayList<>();
+    public static int foo(int index, String s) {
+        Set<Character> set = new HashSet<>();
         for (int i = index; i < s.length(); i++) {
-            if (arr.contains(s.charAt(i))) {
+            if (set.contains(s.charAt(i))) {
                 break;
             }
-            arr.add(s.charAt(i));
+            set.add(s.charAt(i));
         }
-        return arr.size();
+        return set.size();
     }
 
     public static int lengthOfLongestSubstring2(String s) {
