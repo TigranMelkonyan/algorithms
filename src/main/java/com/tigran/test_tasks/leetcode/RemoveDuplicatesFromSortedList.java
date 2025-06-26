@@ -1,5 +1,8 @@
 package com.tigran.test_tasks.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by Tigran Melkonyan
  * Date: 2/27/25
@@ -8,38 +11,50 @@ package com.tigran.test_tasks.leetcode;
 public class RemoveDuplicatesFromSortedList {
 
     public static void main(String[] args) {
-        ListNode list1 = new ListNode(1);
-        list1.next = new ListNode(1);
-        list1.next.next = new ListNode(4);
-        list1.next.next.next = new ListNode(4);
+        ListNode list = new ListNode(1);
+        list.next = new ListNode(1);
+        list.next.next = new ListNode(3);
+        list.next.next.next = new ListNode(3);
 
-        ListNode current = mergeTwoLists(list1);
-        while (current != null) {
-            System.out.print(current.val + " ");
-            current = current.next;
+        ListNode result = removeDuplicatesFromSortedList(list);
+        while (result != null) {
+            System.out.print(result.val + " ");
+            result = result.next;
         }
     }
 
-    public static ListNode mergeTwoLists(ListNode head) {
-        ListNode node = new ListNode();
-        ListNode current = node;
+    public static ListNode removeDuplicatesFromSortedList(ListNode head) {
+        ListNode current = head;
 
-        while (head != null && head.next != null) {
-            if (head.val == head.next.val) {
-                head = head.next;
-                continue;
+        while (current != null && current.next != null) {
+            if (current.val == current.next.val) {
+                current.next = current.next.next;
             } else {
-                current.next = head;
+                current = current.next;
             }
-            head = head.next;
-            current = current.next;
+        }
+       
+        return head;
+    }
+
+    public static ListNode removeDuplicatesFromUnsortedList(ListNode head) {
+        if (head == null) return null;
+
+        Set<Integer> seen = new HashSet<>();
+        ListNode current = head;
+        seen.add(current.val);
+
+        while (current.next != null) {
+            if (seen.contains(current.next.val)) {
+                // Duplicate: skip it
+                current.next = current.next.next;
+            } else {
+                seen.add(current.next.val);
+                current = current.next;
+            }
         }
 
-        if (head != null) {
-            current.next = head;
-        }
-
-        return node.next;
+        return head;
     }
 }
 
@@ -52,10 +67,5 @@ class ListNode {
 
     ListNode(int val) {
         this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
     }
 }
