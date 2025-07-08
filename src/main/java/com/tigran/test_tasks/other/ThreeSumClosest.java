@@ -1,4 +1,4 @@
-package com.tigran.test_tasks;
+package com.tigran.test_tasks.other;
 
 import java.util.Arrays;
 
