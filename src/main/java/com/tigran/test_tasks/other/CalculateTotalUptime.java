@@ -20,7 +20,7 @@ public class CalculateTotalUptime {
     }
 
     public static int calculateTotalUptime(int[][] intervals) {
-        Arrays.sort(intervals, (a0, a1) -> Integer.compare(a0[1], a1[1]));
+        Arrays.sort(intervals, (a0, a1) -> Integer.compare(a0[0], a1[0]));
 
         int totalUptime = 0;
         int start = intervals[0][0];
