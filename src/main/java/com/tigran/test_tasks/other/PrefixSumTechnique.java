@@ -9,7 +9,11 @@ import java.util.Arrays;
  */
 public class PrefixSumTechnique {
     public static void main(String[] args) {
-        Arrays.stream(prefixSum(new int[]{2, 4, 5, 7})).forEach(System.out::println);
+        int[] res = prefixSum(new int[]{2, 4, 5, 7});
+        Arrays.stream(res).forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(sumRange(1, 3, res));
     }
 
     public static int[] prefixSum(int[] arr) {
@@ -23,5 +27,9 @@ public class PrefixSumTechnique {
         }
 
         return prefix;
+    }
+
+    public static int sumRange(int left, int right, int[] prefix) {
+        return prefix[right + 1] - prefix[left];
     }
 }
