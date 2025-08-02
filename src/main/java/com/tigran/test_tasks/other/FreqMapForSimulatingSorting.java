@@ -44,4 +44,36 @@ public class FreqMapForSimulatingSorting {
 
         sorted.forEach(System.out::println);
     }
+
+    //For negatives too
+    public static void main2(String[] args) {
+        int[] arr = {5, 2, 2, 3, -1, -3, 0};
+
+        // Step 1: Find min and max to handle negative numbers
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int i : arr) {
+            min = Math.min(min, i);
+            max = Math.max(max, i);
+        }
+
+        int offset = -min;
+        int[] freq = new int[max - min + 1];
+
+        for (int i : arr) {
+            freq[i + offset]++;
+        }
+
+        List<Integer> sorted = new ArrayList<>();
+
+        for (int i = 0; i < freq.length; i++) {
+            while (freq[i] > 0) {
+                sorted.add(i - offset);
+                freq[i]--;
+            }
+        }
+
+        sorted.forEach(System.out::println);
+    }
 }
