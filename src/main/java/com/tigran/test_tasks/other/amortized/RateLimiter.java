@@ -1,4 +1,4 @@
-package com.tigran.test_tasks.other;
+package com.tigran.test_tasks.other.amortized;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
