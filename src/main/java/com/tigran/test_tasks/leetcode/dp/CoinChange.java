@@ -25,4 +25,22 @@ public class CoinChange {
         }
         return dp[amount] > amount ? -1 : dp[amount];
     }
+
+    //another solution O(n log n + nA)
+    //n is the number of coins (coin denominations).
+    //A is the target amount.
+    public static int coinChange2(int[] coins, int amount) {
+        Arrays.sort(coins);
+        int coinCount = 0;
+
+        // Try to use the largest coin denomination
+        for (int i = coins.length - 1; i >= 0; i--) {
+            if (coins[i] <= amount) {
+                coinCount += amount / coins[i];   // Use as many of this coin as possible
+                amount %= coins[i];               // Reduce the remaining amount
+            }
+        }
+
+        return amount == 0 ? coinCount : -1;  // If we couldn't make exact change, return -1
+    }
 }
