@@ -16,27 +16,15 @@ public class AverageAge {
         );
 
         double averageAge = users.stream()
-                .mapToInt(User::getAge)
+                .mapToInt(User::age)
                 .average()
                 .orElse(0);
 
         System.out.println(averageAge);
     }
 
-}
+    record User(String name, int age) {}
 
-class User {
-    String name;
-    int age;
-
-    User(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    int getAge() {
-        return age;
-    }
 }
 
 
