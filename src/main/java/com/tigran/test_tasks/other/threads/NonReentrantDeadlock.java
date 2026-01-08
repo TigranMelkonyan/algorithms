@@ -5,7 +5,7 @@ package com.tigran.test_tasks.other.threads;
  * Date: 9/24/25
  * Time: 10:37 AM
  */
-public class NonReentrantLock {
+public class NonReentrantDeadlock {
     
     private static class Resource1 {
     }
