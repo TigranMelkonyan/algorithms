@@ -31,10 +31,10 @@ public class OrderGrouping {
 
         System.out.println(topCustomer);
 
-        Map<String, Double> amountsByCustomer = orders.stream()
+        Map<String, List<Double>> amountsByCustomer = orders.stream()
             .collect(Collectors.groupingBy(
                 Order::customer,
-                Collectors.summingDouble(Order::amount)
+                Collectors.mapping(Order::amount, Collectors.toList())
             ));
 
         System.out.println(amountsByCustomer);
